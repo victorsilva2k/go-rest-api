@@ -77,5 +77,5 @@ func main() {
 	router.GET("/todos/:id", getTodo)
 	router.PATCH("/todos/:id", toggleTodoStatus)
 	router.POST("/todos", addTodos)
-	router.Run("0.0.0.0:$PORT")
+	router.Run($PORT)
 }
