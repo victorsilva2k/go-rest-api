@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"errors"
 	"github.com/gin-gonic/gin"
+	"os"
 )
 
 type todo struct {
@@ -77,5 +78,6 @@ func main() {
 	router.GET("/todos/:id", getTodo)
 	router.PATCH("/todos/:id", toggleTodoStatus)
 	router.POST("/todos", addTodos)
-	router.Run($PORT)
+	PORT := os.Getenv("PORT")
+	router.Run(PORT)
 }
