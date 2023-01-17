@@ -79,5 +79,5 @@ func main() {
 	router.PATCH("/todos/:id", toggleTodoStatus)
 	router.POST("/todos", addTodos)
 	PORT := os.Getenv("PORT")
-	router.Run(PORT)
+	router.Run("0.0.0.0:" + PORT)
 }
